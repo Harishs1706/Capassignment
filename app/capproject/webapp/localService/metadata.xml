@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="harish" EntityType="CatalogService.harish"/>
+                <EntitySet Name="ECTime" EntityType="CatalogService.ECTime"/>
+                <EntitySet Name="EmpJob" EntityType="CatalogService.EmpJob"/>
+                <EntitySet Name="PersonInfo" EntityType="CatalogService.PersonInfo"/>
+                <EntitySet Name="harish_service" EntityType="CatalogService.harish_service"/>
+            </EntityContainer>
+            <EntityType Name="harish">
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="id" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="ECTime">
+                <Key>
+                    <PropertyRef Name="externalCode"/>
+                </Key>
+                <Property Name="externalCode" Type="Edm.String" MaxLength="128" Nullable="false"/>
+                <Property Name="userId" Type="Edm.String" MaxLength="100"/>
+                <Property Name="startDate" Type="Edm.Date"/>
+                <Property Name="endDate" Type="Edm.Date"/>
+                <Property Name="timeType" Type="Edm.String" MaxLength="128"/>
+                <Property Name="approvalStatus" Type="Edm.String" MaxLength="255"/>
+            </EntityType>
+            <EntityType Name="EmpJob">
+                <Key>
+                    <PropertyRef Name="seqNumber"/>
+                    <PropertyRef Name="startDate"/>
+                    <PropertyRef Name="userId"/>
+                </Key>
+                <Property Name="seqNumber" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="startDate" Type="Edm.Date" Nullable="false"/>
+                <Property Name="userId" Type="Edm.String" MaxLength="100" Nullable="false"/>
+                <Property Name="assedicCertInitialStateNum" Type="Edm.Int64"/>
+                <Property Name="assedicCertObjectNum" Type="Edm.Int64"/>
+                <Property Name="businessUnit" Type="Edm.String" MaxLength="32"/>
+                <Property Name="calcMethodIndicator" Type="Edm.Boolean"/>
+                <Property Name="commitmentIndicator" Type="Edm.String" MaxLength="256"/>
+                <Property Name="company" Type="Edm.String" MaxLength="32"/>
+                <Property Name="contractReferenceForAed" Type="Edm.String" MaxLength="256"/>
+                <Property Name="contractType" Type="Edm.String" MaxLength="256"/>
+                <Property Name="costCenter" Type="Edm.String" MaxLength="32"/>
+                <Property Name="countryOfCompany" Type="Edm.String" MaxLength="256"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="100"/>
+                <Property Name="createdDateTime" Type="Edm.DateTimeOffset"/>
+                <Property Name="createdOn" Type="Edm.Date"/>
+                <Property Name="defaultOvertimeCompensationVariant" Type="Edm.String"/>
+                <Property Name="department" Type="Edm.String" MaxLength="32"/>
+                <Property Name="division" Type="Edm.String" MaxLength="32"/>
+                <Property Name="eeo1JobCategory" Type="Edm.String" MaxLength="256"/>
+                <Property Name="eeo4JobCategory" Type="Edm.String" MaxLength="256"/>
+                <Property Name="eeo5JobCategory" Type="Edm.String" MaxLength="256"/>
+                <Property Name="eeo6JobCategory" Type="Edm.String" MaxLength="256"/>
+                <Property Name="eeoClass" Type="Edm.String" MaxLength="256"/>
+                <Property Name="electoralCollegeForWorkersRepresentatives" Type="Edm.String" MaxLength="256"/>
+                <Property Name="electoralCollegeForWorksCouncil" Type="Edm.String" MaxLength="256"/>
+                <Property Name="empRelationship" Type="Edm.String" MaxLength="256"/>
+                <Property Name="emplStatus" Type="Edm.String" MaxLength="32"/>
+                <Property Name="employeeClass" Type="Edm.String" MaxLength="256"/>
+                <Property Name="employeeWorkgroupMembership" Type="Edm.String" MaxLength="60"/>
+                <Property Name="employmentType" Type="Edm.String" MaxLength="32"/>
+                <Property Name="endDate" Type="Edm.Date"/>
+                <Property Name="event" Type="Edm.String" MaxLength="32"/>
+                <Property Name="eventReason" Type="Edm.String"/>
+                <Property Name="exclExecutiveSector" Type="Edm.Boolean"/>
+                <Property Name="expectedReturnDate" Type="Edm.Date"/>
+                <Property Name="familyRelationshipWithEmployer" Type="Edm.String" MaxLength="256"/>
+                <Property Name="fgtsDate" Type="Edm.Date"/>
+                <Property Name="fgtsOptant" Type="Edm.Boolean"/>
+                <Property Name="fgtsPercent" Type="Edm.Double"/>
+                <Property Name="flsaStatus" Type="Edm.String" MaxLength="256"/>
+                <Property Name="fte" Type="Edm.Double"/>
+                <Property Name="harmfulAgentExposure" Type="Edm.String" MaxLength="256"/>
+                <Property Name="hazard" Type="Edm.Boolean"/>
+                <Property Name="healthRisk" Type="Edm.Boolean"/>
+                <Property Name="holidayCalendarCode" Type="Edm.String" MaxLength="128"/>
+                <Property Name="isCompetitionClauseActive" Type="Edm.Boolean"/>
+                <Property Name="isFulltimeEmployee" Type="Edm.Boolean"/>
+                <Property Name="isSideLineJobAllowed" Type="Edm.Boolean"/>
+                <Property Name="jobCode" Type="Edm.String" MaxLength="32"/>
+                <Property Name="jobTitle" Type="Edm.String" MaxLength="256"/>
+                <Property Name="laborProtection" Type="Edm.Boolean"/>
+                <Property Name="lastModifiedBy" Type="Edm.String" MaxLength="100"/>
+                <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset"/>
+                <Property Name="lastModifiedOn" Type="Edm.Date"/>
+                <Property Name="location" Type="Edm.String" MaxLength="128"/>
+                <Property Name="managerId" Type="Edm.String" MaxLength="256"/>
+                <Property Name="mandatoryWorkBreakRecord" Type="Edm.Int64"/>
+                <Property Name="municipalInseeCode" Type="Edm.Int64"/>
+                <Property Name="notes" Type="Edm.String" MaxLength="4000"/>
+                <Property Name="operation" Type="Edm.String"/>
+                <Property Name="payGrade" Type="Edm.String" MaxLength="256"/>
+                <Property Name="payScaleArea" Type="Edm.String" MaxLength="128"/>
+                <Property Name="payScaleGroup" Type="Edm.String" MaxLength="128"/>
+                <Property Name="payScaleLevel" Type="Edm.String" MaxLength="128"/>
+                <Property Name="payScaleType" Type="Edm.String" MaxLength="128"/>
+                <Property Name="pcfm" Type="Edm.Boolean"/>
+                <Property Name="pensionProtection" Type="Edm.Boolean"/>
+                <Property Name="permitIndicator" Type="Edm.Boolean"/>
+                <Property Name="position" Type="Edm.String" MaxLength="128"/>
+                <Property Name="positionEntryDate" Type="Edm.Date"/>
+                <Property Name="probationPeriodEndDate" Type="Edm.Date"/>
+                <Property Name="regularTemp" Type="Edm.String" MaxLength="32"/>
+                <Property Name="residentVote" Type="Edm.Boolean"/>
+                <Property Name="retired" Type="Edm.Boolean"/>
+                <Property Name="sickPaySupplement" Type="Edm.String" MaxLength="256"/>
+                <Property Name="standardHours" Type="Edm.Double"/>
+                <Property Name="teachersPension" Type="Edm.Boolean"/>
+                <Property Name="timeRecordingAdmissibilityCode" Type="Edm.String" MaxLength="128"/>
+                <Property Name="timeRecordingProfileCode" Type="Edm.String" MaxLength="128"/>
+                <Property Name="timeRecordingVariant" Type="Edm.String"/>
+                <Property Name="timeTypeProfileCode" Type="Edm.String" MaxLength="128"/>
+                <Property Name="timezone" Type="Edm.String" MaxLength="128"/>
+                <Property Name="travelDistance" Type="Edm.Double"/>
+                <Property Name="tupeOrgNumber" Type="Edm.String" MaxLength="256"/>
+                <Property Name="workLocation" Type="Edm.String" MaxLength="256"/>
+                <Property Name="workerCategory" Type="Edm.String" MaxLength="256"/>
+                <Property Name="workingDaysPerWeek" Type="Edm.Double"/>
+                <Property Name="workingTimeDirective" Type="Edm.Boolean"/>
+                <Property Name="workscheduleCode" Type="Edm.String" MaxLength="128"/>
+                <Property Name="wtdHoursLimit" Type="Edm.String" MaxLength="256"/>
+            </EntityType>
+            <EntityType Name="PersonInfo">
+                <Key>
+                    <PropertyRef Name="personIdExternal"/>
+                    <PropertyRef Name="startDate"/>
+                </Key>
+                <Property Name="personIdExternal" Type="Edm.String" MaxLength="100" Nullable="false"/>
+                <Property Name="startDate" Type="Edm.Date" Nullable="false"/>
+                <Property Name="attachmentId" Type="Edm.String"/>
+                <Property Name="businessFirstName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="businessLastName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="100"/>
+                <Property Name="createdDateTime" Type="Edm.DateTimeOffset"/>
+                <Property Name="createdOn" Type="Edm.Date"/>
+                <Property Name="displayName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="endDate" Type="Edm.Date"/>
+                <Property Name="firstName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="gender" Type="Edm.String" MaxLength="2"/>
+                <Property Name="includeAllRecords" Type="Edm.Boolean"/>
+                <Property Name="initials" Type="Edm.String" MaxLength="128"/>
+                <Property Name="lastModifiedBy" Type="Edm.String" MaxLength="100"/>
+                <Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset"/>
+                <Property Name="lastModifiedOn" Type="Edm.Date"/>
+                <Property Name="lastName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="maritalStatus" Type="Edm.String" MaxLength="50"/>
+                <Property Name="middleName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="nationality" Type="Edm.String" MaxLength="128"/>
+                <Property Name="nativePreferredLang" Type="Edm.String" MaxLength="256"/>
+                <Property Name="operation" Type="Edm.String"/>
+                <Property Name="preferredName" Type="Edm.String" MaxLength="128"/>
+                <Property Name="salutation" Type="Edm.String" MaxLength="128"/>
+                <Property Name="script" Type="Edm.String" MaxLength="32"/>
+                <Property Name="title" Type="Edm.String" MaxLength="128"/>
+            </EntityType>
+            <EntityType Name="harish_service">
+                <Property Name="name" Type="Edm.String"/>
+                <Property Name="id" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

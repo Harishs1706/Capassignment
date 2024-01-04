@@ -1,0 +1,1 @@
+using ECTimeService as service from '../../srv/cat-service';

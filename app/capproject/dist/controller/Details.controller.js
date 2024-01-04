@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("capproject.controller.Details",{onInit:function(){var e=sap.ui.core.UIComponent.getRouterFor(this);e.getRoute("Details")}})});
